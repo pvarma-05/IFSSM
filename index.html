@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IFSSM Dashboard</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">IFSSM</div>
+        <ul class="nav-links">
+            <li><a href="#user" data-section="user">User</a></li>
+            <li><a href="#loan" data-section="loan">Loan</a></li>
+            <li><a href="#cibil-score" data-section="cibil-score">CIBIL Score</a></li>
+            <li><a href="#bank" data-section="bank">Bank</a></li>
+            <li><a href="#financial-plan" data-section="financial-plan">Financial Plan</a></li>
+            <li><a href="#notification" data-section="notification">Notification</a></li>
+            <li><a href="#need" data-section="need">Need</a></li>
+        </ul>
+    </nav>
+
+    <!-- Content Sections -->
+    <div class="content">
+        <!-- User Section -->
+        <section id="user" class="content-section active">
+            <h2>User Management</h2>
+            <div class="user-card">
+                <img src="https://via.placeholder.com/100" alt="User Profile Picture">
+                <div class="user-info">
+                    <h3>Ande Devi Prasad</h3>
+                    <p><strong>Username:</strong> devi_05</p>
+                    <p><strong>Email:</strong> dande@gitam.in</p>
+                    <p><strong>Status:</strong> Active</p>
+                    <button class="btn">View Profile</button>
+                    <button class="btn">Edit User</button>
+                    <a href="/logout"><button class="btn logout-btn">Logout</button></a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Loan Section -->
+        <section id="loan" class="content-section">
+            <h2>Loan Management</h2>
+            <p>Manage different loan types, link them to users, and offer them based on user criteria.</p>
+        </section>
+
+        <!-- CIBIL Score Section -->
+        <section id="cibil-score" class="content-section">
+            <h2>CIBIL Score Management</h2>
+            <p>Calculate and manage the CIBIL score of users based on their payment patterns and credit history.</p>
+        </section>
+
+        <!-- Bank Section -->
+        <section id="bank" class="content-section">
+            <h2>Bank Management</h2>
+            <p>Manage bank information, locations, and offers for various financial services.</p>
+        </section>
+
+        <!-- Financial Plan Section -->
+        <section id="financial-plan" class="content-section">
+            <h2>Financial Plan Management</h2>
+            <p>Design and offer financial plans tailored to different age groups and needs.</p>
+        </section>
+
+        <!-- Notification Section -->
+        <section id="notification" class="content-section">
+            <h2>Notification Management</h2>
+            <p>Send notifications to users regarding updates, offers, or important announcements.</p>
+        </section>
+
+        <!-- Need Section -->
+        <section id="need" class="content-section">
+            <h2>Need Management</h2>
+            <p>Track and manage user needs and establish financial strategies based on their requirements.</p>
+        </section>
+    </div>
+
+    <script>
+        // Select all nav links and content sections
+        const navLinks = document.querySelectorAll('.nav-links a');
+        const contentSections = document.querySelectorAll('.content-section');
+
+        // Add click event listener to each nav link
+        navLinks.forEach(link => {
+            link.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                // Get the target section ID from the data attribute
+                const targetSection = this.getAttribute('data-section');
+
+                // Hide all content sections
+                contentSections.forEach(section => {
+                    section.classList.remove('active');
+                });
+
+                // Show the target section
+                document.getElementById(targetSection).classList.add('active');
+            });
+        });
+    </script>
+</body>
+
+</html>
